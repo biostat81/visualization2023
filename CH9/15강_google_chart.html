@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+          ['산업', '비중'],
+          ['농림어업',     34267.8],
+          ['광공업',        482774.6],
+          ['전기가스수도업',  43069.7],
+          ['건설업', 105632.3],
+          ['서비스업',   1106359.9]
+        ]);
+     var options = {
+          title: '2020년 생산구조(단위: %, 10억원)',
+          is3D: true,
+        };
+         var chart = new google.visualization.PieChart(document.getElementById                  ('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
